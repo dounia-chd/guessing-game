@@ -1,9 +1,7 @@
-README.md: guessinggame.sh
-	echo "# Projet : Guessing Game" > README.md
-	echo "\n## Date et heure de génération" >> README.md
-	date >> README.md
-	echo "\n## Nombre de lignes de code dans guessinggame.sh" >> README.md
-	wc -l < guessinggame.sh | xargs echo >> README.md
-
-clean:
-	rm -f README.md
+readme : guessinggame.sh
+touch README.md
+echo "Title of the project: __Peer-graded Assignment: Bash, Make, Git, and GitHub__" > README.md
+echo "\nDate make ran at:" >> README.md
+date >> README.md
+echo "\nNumber of lines file guessinggame.sh contains:" >> README.md
+cat guessinggame.sh | wc -l >> README.md
